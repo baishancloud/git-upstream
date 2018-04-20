@@ -170,6 +170,11 @@ err() {
     _LOG_LEVEL="ERROR" log "${Red}" "$@"
 }
 
+
+git_rev_exist()
+{
+    git rev-parse --verify --quiet "$1" >/dev/null
+}
 git_hash()
 {
     git rev-parse $1 \
